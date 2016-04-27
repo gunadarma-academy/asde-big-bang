@@ -1,9 +1,14 @@
 <?php get_header(); ?>
-	<div class="row">
-		<?php
-			while(have_posts()) : the_post(); ?>
-				<div class="col-4"><?php get_template_part('content'); ?></div>
-				<div class="col-4"><?php //get_template_part('content'); echo 'ij oiji oj iojio joi '; ?></div>
-		<?php endwhile; ?>
+	<div id="main-content">
+		<div id="post-content">
+			<div class="row-container">
+					<?php
+						while(have_posts()) : the_post();?>
+							<div class="post-container">
+								<?php get_template_part('content', get_post_format()); ?>
+							</div>
+					<?php endwhile; ?>
+			</div>
+		<div id="main-content">
 	</div>
 <?php get_footer(); ?>
